@@ -3,7 +3,7 @@ from sklearn.externals import joblib
 from flask import request
 import numpy as np
 import os
-#from chatbot import CB
+from chatbot import CB
 #import spacy
 #import en_core_web_md
 #nlp = en_core_web_md.load()
@@ -67,10 +67,10 @@ def chatbot():
 
 
 
-#@app.route("/get")
-#def get_bot_response():
- #   userText = request.args.get('msg')
-  #  return str(CB.get_response(userText))
+@app.route("/get")
+def get_bot_response():
+    userText = request.args.get('msg')
+    return str(CB.get_response(userText))
 
 
 if __name__ == "__main__":
